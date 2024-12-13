@@ -26,6 +26,10 @@ Esto se puede observar en las gráficas adjuntas: la primera muestra las 10 cate
   <img src="images/imagen2.png" alt="Gráfica 2" width="300">
 </div>
 
+A continuación se muestran los histogramas de ratings para algunas de las categorías más relacionadas con el rating:
+
+A continuación se muestran los histogramas de ratings para algunas de las categorías menos relacionadas con el rating:
+
 
 # 2. Implementación de un pipeline para el preprocesado de los textos. Para esta tarea puede usar las librerías habituales (NLTK, Gensim o SpaCy), o cualquier otra librería que considere oportuna. Tenga en cuenta que para trabajar con transformers el texto se pasa sin preprocesar.
 
