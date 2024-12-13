@@ -31,12 +31,16 @@ A continuación se muestran los histogramas de ratings para algunas de las categ
   <img src="images/histograma_saute.png" alt="Gráfica 1" width="300">
   <img src="images/histograma_pasta.png" alt="Gráfica 2" width="300">
 </div>
+A partir de los histogramas mostrados, se puede observar que los ratings para las categorías como Sauté y Pasta son mayoritariamente positivos, concentrándose principalmente en valores altos (4 y 5). Esto indica que estas categorías están consistentemente asociadas con recetas que los usuarios valoran positivamente, evidenciando una relación clara y fuerte con los ratings. La baja dispersión en los valores de rating refuerza esta conclusión.
+
 
 A continuación se muestran los histogramas de ratings para algunas de las categorías menos relacionadas con el rating:
 <div style="display: flex; justify-content: space-around;">
   <img src="images/histograma_party.png" alt="Gráfica 1" width="300">
   <img src="images/histograma_sauce.png" alt="Gráfica 2" width="300">
 </div>
+
+A partir de los histogramas mostrados, se puede observar que los ratings para estas categorías están distribuidos de manera más uniforme entre puntuaciones distintas, desde 1 hasta 5. Esto sugiere que no existe una relación clara entre estas categorías y el rating, ya que los valores están dispersos y no muestran una concentración significativa en puntuaciones específicas.
 
 # 2. Implementación de un pipeline para el preprocesado de los textos. Para esta tarea puede usar las librerías habituales (NLTK, Gensim o SpaCy), o cualquier otra librería que considere oportuna. Tenga en cuenta que para trabajar con transformers el texto se pasa sin preprocesar.
 
