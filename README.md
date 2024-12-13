@@ -21,7 +21,7 @@ Entre las categorías más relacionadas con el rating, destacan Sauté, Pasta y 
 
 Esto se puede observar en las gráficas adjuntas: la primera muestra las 10 categorías con menor varianza, es decir, las más relacionadas con el rating, mientras que la segunda presenta las categorías con mayor varianza, reflejando una relación menos definida con los ratings. Este análisis aporta información valiosa sobre qué categorías pueden tener un impacto más predecible en los ratings y cuáles presentan una relación más heterogénea.
 
-<div style="display: flex; justify-content: space-around;">
+<div style="display: flex; justify-content: space-around; align="center"">
   <img src="grafica1.png" alt="Gráfica 1" width="300">
   <img src="grafica2.png" alt="Gráfica 2" width="300">
 </div>
