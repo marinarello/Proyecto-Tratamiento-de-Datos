@@ -28,12 +28,15 @@ Esto se puede observar en las gráficas adjuntas: la primera muestra las 10 cate
 
 A continuación se muestran los histogramas de ratings para algunas de las categorías más relacionadas con el rating:
 <div style="display: flex; justify-content: space-around;">
-  <img src="images/imagen1.png" alt="Gráfica 1" width="300">
-  <img src="images/imagen2.png" alt="Gráfica 2" width="300">
+  <img src="images/histograma_saute.png" alt="Gráfica 1" width="300">
+  <img src="images/histograma_pasta.png" alt="Gráfica 2" width="300">
 </div>
 
 A continuación se muestran los histogramas de ratings para algunas de las categorías menos relacionadas con el rating:
-
+<div style="display: flex; justify-content: space-around;">
+  <img src="images/histograma_party.png" alt="Gráfica 1" width="300">
+  <img src="images/histograma_sauce.png" alt="Gráfica 2" width="300">
+</div>
 
 # 2. Implementación de un pipeline para el preprocesado de los textos. Para esta tarea puede usar las librerías habituales (NLTK, Gensim o SpaCy), o cualquier otra librería que considere oportuna. Tenga en cuenta que para trabajar con transformers el texto se pasa sin preprocesar.
 
