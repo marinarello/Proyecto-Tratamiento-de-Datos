@@ -21,6 +21,11 @@ Entre las categorías más relacionadas con el rating, destacan Sauté, Pasta y 
 
 Esto se puede observar en las gráficas adjuntas: la primera muestra las 10 categorías con menor varianza, es decir, las más relacionadas con el rating, mientras que la segunda presenta las categorías con mayor varianza, reflejando una relación menos definida con los ratings. Este análisis aporta información valiosa sobre qué categorías pueden tener un impacto más predecible en los ratings y cuáles presentan una relación más heterogénea.
 
+<div style="display: flex; justify-content: space-around;">
+  <img src="grafica1.png" alt="Gráfica 1" width="300">
+  <img src="grafica2.png" alt="Gráfica 2" width="300">
+</div>
+
 
 # 2. Implementación de un pipeline para el preprocesado de los textos. Para esta tarea puede usar las librerías habituales (NLTK, Gensim o SpaCy), o cualquier otra librería que considere oportuna. Tenga en cuenta que para trabajar con transformers el texto se pasa sin preprocesar.
 
