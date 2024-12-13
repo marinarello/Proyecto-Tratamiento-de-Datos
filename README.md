@@ -57,11 +57,6 @@ A continuación, representamos los términos más frecuentes en el la columna de
 </div>
 
 
-
-
-
-
-
 # 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
 ## - TF-IDF
 ## - Word2Vec(es decir, la representación de los documentos como promedio de los embeddings de las palabras que lo forman)
