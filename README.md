@@ -50,7 +50,11 @@ Para ello se han realizado los siguientes pasos:
   - Cleaning: se han eliminado aquellas palabras que son muy comunes en el idioma y no aportan contenido semántico útil 
   - Vectorization: Se ha transformado el texto procesado en una representación numérica (vectores) que los algoritmos pueden interpretar. Estos vectores capturan la información semántica y estructural del texto. Para ello, se ha creado un diccionario que asocia cada token con un identificador único y se han eliminado palabras que aparecen en muy pocos documentos o en demasiados. Cada documento se convierte en una lista de tuplas incluyendo el identificador único del token y la cantidad de veces que ese token aparece en el documento. Esto produce una representación dispersa (sparse vector), donde las palabras relevantes del texto están asociadas con su frecuencia. Finalmente, cada documento se representa como un vector disperso, donde los identificadores de los tokens corresponden a posiciones específicas del vector, y los valores representan la frecuencia.
 
-A continuación, representamos los términos más frecuentes en el las columnas:
+A continuación, representamos los términos más frecuentes en el las columna descriptions:
+<div align="center">
+  <img src="images/token_distribution1.jpg" alt="Gráfica 1" width="300">
+  <img src="images/token_occurrence1.jpg" alt="Gráfica 2" width="300">
+</div>
 
 
 
