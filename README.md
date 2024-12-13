@@ -31,8 +31,7 @@ A continuación se muestran los histogramas de ratings para algunas de las categ
   <img src="images/histograma_saute.png" alt="Gráfica 1" width="300">
   <img src="images/histograma_pasta.png" alt="Gráfica 2" width="300">
 </div>
-A partir de los histogramas mostrados, se puede observar que los ratings para las categorías como Sauté y Pasta son mayoritariamente positivos, concentrándose principalmente en valores altos (4 y 5). Esto indica que estas categorías están consistentemente asociadas con recetas que los usuarios valoran positivamente, evidenciando una relación clara y fuerte con los ratings. La baja dispersión en los valores de rating refuerza esta conclusión.
-
+A partir de los histogramas mostrados, se puede observar que los ratings para las categorías como Sauté y Pasta son mayoritariamente positivos, concentrándose principalmente en valores altos (4 y 5). Esto indica que estas categorías están consistentemente asociadas con recetas que los usuarios valoran positivamente, evidenciando una relación clara y fuerte con los ratings. La baja dispersión en los valores de rating refuerza esta conclusión.<br><br>
 
 A continuación se muestran los histogramas de ratings para algunas de las categorías menos relacionadas con el rating:
 <div style="display: flex; justify-content: space-around;">
