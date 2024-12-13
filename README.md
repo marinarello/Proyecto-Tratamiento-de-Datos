@@ -27,6 +27,10 @@ Esto se puede observar en las gráficas adjuntas: la primera muestra las 10 cate
 </div>
 
 A continuación se muestran los histogramas de ratings para algunas de las categorías más relacionadas con el rating:
+<div style="display: flex; justify-content: space-around;">
+  <img src="images/imagen1.png" alt="Gráfica 1" width="300">
+  <img src="images/imagen2.png" alt="Gráfica 2" width="300">
+</div>
 
 A continuación se muestran los histogramas de ratings para algunas de las categorías menos relacionadas con el rating:
 
