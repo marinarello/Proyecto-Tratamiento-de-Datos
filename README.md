@@ -9,10 +9,7 @@
   
 </div>
 
-<div style="text-align: justify;">
 El proyecto básico consistirá en la resolución de una tarea de regresión, comparando las prestaciones obtenidas al utilizar distintas vectorizaciones de los documentos y al menos dos estrategias distintas de aprendizaje automático, según se describe a continuación. Los pasos que debe seguir en su trabajo son los siguientes:
-</div>
-
 
 
 # 1. Análisis de variables de entrada. Visualice la relación entre la variable de salida y algunas de las categorías en la variable categories y explique su potencial relevancia en el problema.
@@ -45,6 +42,16 @@ A continuación se muestran los histogramas de ratings para algunas de las categ
 A partir de los histogramas mostrados, se puede observar que los ratings para estas categorías están distribuidos de manera más uniforme entre puntuaciones distintas, desde 1 hasta 5. Esto sugiere que no existe una relación clara entre estas categorías y el rating, ya que los valores están dispersos y no muestran una concentración significativa en puntuaciones específicas.
 
 # 2. Implementación de un pipeline para el preprocesado de los textos. Para esta tarea puede usar las librerías habituales (NLTK, Gensim o SpaCy), o cualquier otra librería que considere oportuna. Tenga en cuenta que para trabajar con transformers el texto se pasa sin preprocesar.
+
+En este paso se han transformado los datos de entrada de texto en bruto en una representación vectorial. Para ello, se ha eliminado la información irrelevante de los datos de texto, preservando la mayor cantidad de información relevante posible para capturar el contenido semántico en la colección de documentos.
+Para ello se han realizado los siguientes pasos:
+  - Tokenization: Se ha dividido el texto en unidades más pequeñas llamadas tokens, para poder trabajar con cada elemento del texto de manera independiente.
+  - Homogeneization: Se estandariza el texto para reducir variaciones innecesarias, como convertir todo a minúsculas, eliminar acentos y elementos no alfanuméricos o normalizar términos similares.
+  - Cleaning: se han eliminado aquellas palabras que son muy comunes en el idioma y no aportan contenido semántico útil 
+  - Vectorization: Se ha transformado el texto procesado en una representación numérica (vectores) que los algoritmos pueden interpretar. Estos vectores capturan la información semántica y estructural del texto.
+
+
+
 
 # 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
 ## - TF-IDF
