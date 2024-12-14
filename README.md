@@ -12,7 +12,15 @@
 El proyecto básico consistirá en la resolución de una tarea de regresión, comparando las prestaciones obtenidas al utilizar distintas vectorizaciones de los documentos y al menos dos estrategias distintas de aprendizaje automático, según se describe a continuación. Los pasos que debe seguir en su trabajo son los siguientes:
 
 
+PONER QUE HEMOS HECHO UNA LIMPIEZA DE LA BASE DE DATOS, EXPLICAR QUE HEMOS HECHO
+
+
 # 1. Análisis de variables de entrada. Visualice la relación entre la variable de salida y algunas de las categorías en la variable categories y explique su potencial relevancia en el problema.
+
+
+CAMBIAR GRÁFICAS
+
+
 En este paso, se ha realizado un análisis exploratorio de la base de datos para identificar posibles relaciones entre las distintas categorías y el rating. Para ello, se ha calculado la varianza de los ratings asociados a cada categoría como medida de dispersión: una varianza baja indica que la categoría está más consistentemente asociada a ciertos valores de rating, mientras que una varianza alta sugiere una relación menos definida.
 
 Con el fin de garantizar la fiabilidad del análisis, este estudio se ha limitado a las categorías que aparecen al menos 500 veces en la base de datos. Esto evita sesgos provocados por la baja frecuencia de algunas categorías. Finalmente, se han identificado las categorías con la mayor y menor relación con el rating, basándose en sus respectivas varianzas, y se han visualizado mediante histogramas las distribuciones de rating para cada una de ellas.
