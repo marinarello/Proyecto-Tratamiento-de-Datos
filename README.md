@@ -15,6 +15,20 @@ El proyecto básico consistirá en la resolución de una tarea de regresión, co
 PONER QUE HEMOS HECHO UNA LIMPIEZA DE LA BASE DE DATOS, EXPLICAR QUE HEMOS HECHO
 
 Como paso inicial, observamos el dataset con el que se va a trabajar:
+<div align="center">
+  <img src="images/Dataset_completo.png" alt="Gráfica 1">
+</div>
+
+Se observan valores vacíos en el dataset, por lo que se realiza una limpieza del mismo eliminando estos valores vacíos.
+
+Una vez eliminados los valores vacíos del dataset, observamos los valores numéricos del dataset, con el fin de entender mejor la información contenida:
+
+
+
+
+
+#Observamos valores numéricos del dataset, se observan outliers:
+
 
 
 
