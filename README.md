@@ -14,6 +14,9 @@ El proyecto básico consistirá en la resolución de una tarea de regresión, co
 
 PONER QUE HEMOS HECHO UNA LIMPIEZA DE LA BASE DE DATOS, EXPLICAR QUE HEMOS HECHO
 
+Como paso inicial, observamos el dataset con el que se va a trabajar:
+
+
 
 # 1. Análisis de variables de entrada. Visualice la relación entre la variable de salida y algunas de las categorías en la variable categories y explique su potencial relevancia en el problema.
 
