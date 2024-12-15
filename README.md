@@ -42,7 +42,7 @@ Se ha realizado una limpieza de dichos "outliers", tras la limpieza, volvemos a 
 
 
 
-###########################################3CAMBIAR TODO ESTO##################################################
+###################################CAMBIAR TODO ESTO###################################
 
 En este paso, se ha realizado un análisis exploratorio de la base de datos para identificar posibles relaciones entre las distintas categorías y el rating. Para ello, se ha calculado la varianza de los ratings asociados a cada categoría como medida de dispersión: una varianza baja indica que la categoría está más consistentemente asociada a ciertos valores de rating, mientras que una varianza alta sugiere una relación menos definida.
 
