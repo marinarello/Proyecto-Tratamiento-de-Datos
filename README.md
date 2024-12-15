@@ -11,9 +11,6 @@
 
 El proyecto básico consistirá en la resolución de una tarea de regresión, comparando las prestaciones obtenidas al utilizar distintas vectorizaciones de los documentos y al menos dos estrategias distintas de aprendizaje automático, según se describe a continuación. Los pasos que debe seguir en su trabajo son los siguientes:
 
-
-PONER QUE HEMOS HECHO UNA LIMPIEZA DE LA BASE DE DATOS, EXPLICAR QUE HEMOS HECHO
-
 Como paso inicial, observamos el dataset con el que se va a trabajar:
 <div align="center">
   <img src="images/Dataset_completo.png" alt="Gráfica 1">
@@ -30,20 +27,22 @@ En cada histograma, los valores en el eje horizontal son extremadamente grandes,
 
 Se ha realizado una limpieza de dichos "outliers", tras la limpieza, volvemos a observamos los valores numéricos del dataset. Los valores extremos (outliers) que antes estiraban las escalas de los ejes han sido eliminados. Ahora las distribuciones muestran de forma más clara y representativa cómo se concentran los datos:
 
-
-
-
-
-#Observamos valores numéricos del dataset, se observan outliers:
-
-
+<div align="center">
+  <img src="images/sin_outliers.png" alt="Gráfica 1">
+</div>
 
 
 # 1. Análisis de variables de entrada. Visualice la relación entre la variable de salida y algunas de las categorías en la variable categories y explique su potencial relevancia en el problema.
 
 
-CAMBIAR GRÁFICAS
 
+
+
+
+
+
+
+###########################################3CAMBIAR TODO ESTO##################################################
 
 En este paso, se ha realizado un análisis exploratorio de la base de datos para identificar posibles relaciones entre las distintas categorías y el rating. Para ello, se ha calculado la varianza de los ratings asociados a cada categoría como medida de dispersión: una varianza baja indica que la categoría está más consistentemente asociada a ciertos valores de rating, mientras que una varianza alta sugiere una relación menos definida.
 
