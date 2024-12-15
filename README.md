@@ -36,8 +36,10 @@ Se ha realizado una limpieza de dichos "outliers", tras la limpieza, volvemos a 
 
 Como paso previo, se ha estudiado la relación de las distintas variables numéricas con el "rating":
 <div align="center">
-  <img src="images/sin_outliers.png" alt="Gráfica 1">
+  <img src="images/numericas.png" alt="Gráfica 1">
 </div>
+
+Se han realizado gráficos de dispersión para analizar la relación entre las variables numéricas (fat, calories, protein y sodium) y el rating. Al observar los resultados, se puede concluir que no existe una relación clara o significativa, ya que los puntos se encuentran dispersos y no muestran patrones definidos. La variabilidad del "rating" se mantiene amplia para todos los valores de las variables numéricas, lo que indica que estas no tienen un impacto directo en el comportamiento del rating.
 
 
 
