@@ -34,7 +34,10 @@ Se ha realizado una limpieza de dichos "outliers", tras la limpieza, volvemos a 
 
 # 1. Análisis de variables de entrada. Visualice la relación entre la variable de salida y algunas de las categorías en la variable categories y explique su potencial relevancia en el problema.
 
-
+Como paso previo, se ha estudiado la relación de las distintas variables numéricas con el "rating":
+<div align="center">
+  <img src="images/sin_outliers.png" alt="Gráfica 1">
+</div>
 
 
 
