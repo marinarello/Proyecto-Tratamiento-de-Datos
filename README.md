@@ -1,11 +1,12 @@
 <div align="center">
-  Proyecto Final
   
-  Tratamiento de Datos
+  **Proyecto Final** 
   
-  Máster de Ing. de Telecomunicación
+  **Tratamiento de Datos**
+  
+  **Máster de Ing. de Telecomunicación**
 
-  Daniel Muñoz y Marina Rello
+  **Daniel Muñoz y Marina Rello**
   
 </div>
 
@@ -59,12 +60,6 @@ Para ello se han realizado los siguientes pasos:
   - Cleaning: se han eliminado aquellas palabras que son muy comunes en el idioma y no aportan contenido semántico útil 
   - Vectorization: Se ha transformado el texto procesado en una representación numérica (vectores) que los algoritmos pueden interpretar. Estos vectores capturan la información semántica y estructural del texto. Para ello, se ha creado un diccionario que asocia cada token con un identificador único y se han eliminado palabras que aparecen en muy pocos documentos o en demasiados. Cada documento se convierte en una lista de tuplas incluyendo el identificador único del token y la cantidad de veces que ese token aparece en el documento. Esto produce una representación dispersa (sparse vector), donde las palabras relevantes del texto están asociadas con su frecuencia. Finalmente, cada documento se representa como un vector disperso, donde los identificadores de los tokens corresponden a posiciones específicas del vector, y los valores representan la frecuencia.
 
-A continuación, representamos los términos más frecuentes en el la columna descriptions:
-<div align="center">
-  <img src="images/token_distribution1.jpg" alt="Gráfica 1" width="300">
-  <img src="images/token_occurrence1.jpg" alt="Gráfica 2" width="300">
-</div>
-
 
 # 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
 Una vez conseguido nustras columnas de texto ya preprocesadas en el paso anterior, podremos proceder con la vectoriazion de estas columnas con distintos modelos.
@@ -85,10 +80,31 @@ Finalmente añadiremos al dataframe en nuevas columnas los vectores obtenidos pa
 
 
 # 4. Entrenamiento y evaluación de modelos de regresión utilizando al menos las dos estrategias siguientes de aprendizaje automático:
-################################################################
-EXPLICAR NUESTRA X
-################################################################
-Cada modelo de regresión se ha entrenado y evaluado utilizando las tres técnicas de vectorización presentadas en el apartado anterior. Esto se ha realizado con el objetivo de comparar los resultados obtenidos y determinar cuál de las técnicas ofrece el mejor rendimiento.
+Cada modelo de regresión ha sido entrenado y evaluado utilizando las tres técnicas de vectorización presentadas en el apartado anterior, con el objetivo de comparar los resultados obtenidos y determinar cuál de las técnicas ofrece el mejor rendimiento.
+
+En primer lugar, se llevó a cabo una regresión utilizando el modelo k-NN con la vectorización Word2Vec. Para ello, se probó el modelo empleando diferentes combinaciones de columnas como entrada (𝑋), con el propósito de identificar cuáles ofrecían los mejores resultados. Una vez determinada la combinación óptima, esta se utilizó de manera uniforme en todos los modelos para garantizar la coherencia en la comparación.
+
+La tabla que se presenta a continuación muestra las distintas combinaciones de columnas evaluadas y los valores de error cuadrático medio (MSE) obtenidos en cada caso.
+
+<div align="center">
+
+| **Combinación de Columnas**                                                  | **MSE (k-NN)** |
+|------------------------------------------------------------------------------|---------------:|
+| directions_W2V, otras_columnas, categories_W2V, desc_W2V, title_W2V, ingredients_W2V | 1.55          |
+| directions_W2V, otras_columnas, categories_W2V, desc_W2V                     | 1.55          |
+| directions_W2V, otras_columnas, categories_W2V, title_W2V                    | 1.55          |
+| directions_W2V, otras_columnas, categories_W2V                               | 1.55          |
+| directions_W2V, categories_W2V, title_W2V                                    | 1.49          |
+| directions_W2V, categories_W2V, desc_W2V, title_W2V, ingredients_W2V         | 1.49          |
+| directions_W2V, categories_W2V, desc_W2V, title_W2V                          | 1.47          |
+
+</div>
+
+
+
+
+Durante este análisis, se observó que las combinaciones que incluían columnas de valores numéricos producían peores resultados, por lo que dichas columnas fueron excluidas de la entrada del modelo. Finalmente, la combinación que ofreció los mejores resultados incluye las columnas: directions, categories, desc y title.
+
 ## - Redes neuronales utilizando PyTorch para su implementación.
 Se ha implementado una red neuronal diseñada con dos capas ocultas: la primera con 50 neuronas y la segunda con 25, ambas utilizando la función de activación ReLU, y una capa de salida con una única neurona para predecir valores continuos. Se divide el conjunto de datos en entrenamiento (80%) y prueba (20%), convirtiendo los datos a tensores para su uso en PyTorch. La red se entrena durante 25 épocas usando el optimizador Adam y la función de pérdida de error cuadrático medio (MSELoss), procesando los datos en lotes de 32 muestras con un DataLoader para mejorar la eficiencia. Finalmente, se evalúa el modelo en los datos de prueba calculando la pérdida y el coeficiente R2.
 
@@ -182,6 +198,12 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
 
 
 # 5. Comparación de lo obtenido en el paso 3 con el fine-tuning de un modelo preentrenado con Hugging Face. En este paso se pide utilizar un modelo de tipo transformer con una cabeza dedicada a la tarea de regresión.
+
+
+# EXTENSIÓN
+En la extensión se ha realizado una tarea de traducción de texto.
+Se ha utilizado la librería Hugging Face Transformers para traducir automáticamente los títulos de la columna title del inglés al español, empleando el modelo pre-entrenado Helsinki-NLP/opus-mt-en-es. Primero, se configura un pipeline para realizar la tarea de generación de texto orientada a la traducción. Luego, se recorre cada título en la columna y se pasa al modelo un comando explícito para traducir, como "translate from English to Spanish: {title}". El modelo genera el texto traducido, que se extrae y almacena en una lista. Finalmente, esta lista de traducciones se agrega como una nueva columna, title_translated, en el DataFrame original, permitiendo tener tanto los títulos originales como sus traducciones.
+
 
 
 
