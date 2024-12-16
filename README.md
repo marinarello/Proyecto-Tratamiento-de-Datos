@@ -81,6 +81,90 @@ Se han implementado los modelos de regresión k-NN y Random Forest.
 Para el modelo k-NN, se ha realizado validación cruzada en cada vectorización con el objetivo de determinar el valor óptimo del hiperparámetro 𝑘. 
 En el caso de Random Forest, debido a las limitaciones de tiempo y al elevado costo computacional, el ajuste de los hiperparámetros "n_estimators" y "max_depth" se ha realizado únicamente para una de las vectorizaciones, utilizando los valores obtenidos como referencia para el resto de los modelos.
 
+A continuación, se presenta una tabla comparativa que recoge los resultados obtenidos para cada modelo de regresión aplicado a las diferentes técnicas de vectorización.
+
+<div align="center">
+<table>
+    <tr>
+        <th>Modelo</th>
+        <th>Vectorización</th>
+        <th>MSE</th>
+        <th>MAE</th>
+        <th>R²</th>
+        <th>RMSE</th>
+    </tr>
+    <tr>
+        <td rowspan="3">k-NN</td>
+        <td>TF-IDF</td>
+        <td>0.34</td>
+        <td>0.21</td>
+        <td>0.89</td>
+        <td>0.58</td>
+    </tr>
+    <tr>
+        <td>Word2Vec</td>
+        <td>0.38</td>
+        <td>0.25</td>
+        <td>0.85</td>
+        <td>0.62</td>
+    </tr>
+    <tr>
+        <td>BERT</td>
+        <td>0.40</td>
+        <td>0.28</td>
+        <td>0.83</td>
+        <td>0.63</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Random Forest</td>
+        <td>TF-IDF</td>
+        <td>0.30</td>
+        <td>0.18</td>
+        <td>0.91</td>
+        <td>0.54</td>
+    </tr>
+    <tr>
+        <td>Word2Vec</td>
+        <td>0.32</td>
+        <td>0.20</td>
+        <td>0.90</td>
+        <td>0.56</td>
+    </tr>
+    <tr>
+        <td>BERT</td>
+        <td>0.35</td>
+        <td>0.22</td>
+        <td>0.87</td>
+        <td>0.59</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Red Neuronal</td>
+        <td>TF-IDF</td>
+        <td>0.28</td>
+        <td>0.17</td>
+        <td>0.92</td>
+        <td>0.53</td>
+    </tr>
+    <tr>
+        <td>Word2Vec</td>
+        <td>0.31</td>
+        <td>0.19</td>
+        <td>0.91</td>
+        <td>0.55</td>
+    </tr>
+    <tr>
+        <td>BERT</td>
+        <td>0.33</td>
+        <td>0.21</td>
+        <td>0.89</td>
+        <td>0.57</td>
+    </tr>
+</table>
+
+</div>
+
+
+
 # 5. Comparación de lo obtenido en el paso 3 con el fine-tuning de un modelo preentrenado con Hugging Face. En este paso se pide utilizar un modelo de tipo transformer con una cabeza dedicada a la tarea de regresión.
 
 
