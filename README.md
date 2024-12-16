@@ -206,7 +206,7 @@ Se ha utilizado la librería Hugging Face Transformers para traducir automática
 
 En la imagen de abajo se muestra el resultado de una ejecución realizada para mostrar las columnas "Title" y "Title_translated", para comprobar el correcto funcionamiento:
 <div align="center">
-  <img src="raducción/traduccion.png" alt="Gráfica 1">
+  <img src="images/traduccion.png" alt="Gráfica 1">
 </div>
 
 
