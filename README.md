@@ -64,6 +64,8 @@ Para ello se han realizado los siguientes pasos:
 # 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
 Una vez conseguido nustras columnas de texto ya preprocesadas en el paso anterior, podremos proceder con la vectoriazion de estas columnas con distintos modelos.
 ## - TF-IDF
+Comenzaremos con la vectorización mediante TF-IDF. Para ello empleamos el modelo TfidfVectorizer el caul aprende el vocabulario y su importancia mediante un fit, y a continuación realiza una transformacion de los textos en vectores mediante un transform. Obtedremos una matriz en la que veremos la representacion de cada palabra de una receta con su puntuaje de TF-IDF.
+Realizamos estos pasos con cada una de las columnas de texto que tenemos.
 
 ## - Word2Vec(es decir, la representación de los documentos como promedio de los embeddings de las palabras que lo forman)
 Para la vectorizacion de las columnas de texto empleando Word2Vec que consiste en caprturar las relaciones semánticas y sintácticas entre palabras.
@@ -142,10 +144,10 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
     </tr>
     <tr>
         <td>BERT</td>
-        <td>?</td>
-        <td>?</td>
-        <td>?</td>
-        <td>?</td>
+        <td>1.518</td>
+        <td>0.822</td>
+        <td>1.232</td>
+        <td>0.016</td>
     </tr>
     <tr>
         <td rowspan="3">Random Forest</td>
@@ -164,10 +166,10 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
     </tr>
     <tr>
         <td>BERT</td>
-        <td>?</td>
-        <td>?</td>
-        <td>?</td>
-        <td>?</td>
+        <td>1.61</td>
+        <td>0.83</td>
+        <td>0.044</td>
+        <td>1.27</td>
     </tr>
     <tr>
         <td rowspan="3">Red Neuronal</td>
@@ -186,9 +188,9 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
     </tr>
     <tr>
         <td>BERT</td>
-        <td>?</td>
+        <td>1.67</td>
         <td>X</td>
-        <td>?</td>
+        <td>-0.05</td>
         <td>X</td>
     </tr>
 </table>
@@ -198,7 +200,31 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
 
 
 # 5. Comparación de lo obtenido en el paso 3 con el fine-tuning de un modelo preentrenado con Hugging Face. En este paso se pide utilizar un modelo de tipo transformer con una cabeza dedicada a la tarea de regresión.
+En este punto entrenaremos y evaluaremos un modelo BERT.
+Para el entrenamiento hemos establecido la columna de descripciones como entrada y la columna de ratings como salida. Comenzaremos dividiendo los datos en un conjunto de entrenamiento(80%) y test(20%). 
+Al igual que en el punto 3 empleamos el modelo y el tokenizador de 'bert-base-uncased', y a continuación realizamos una conversión de las listas de texto creadas anteriormente en tokens de BERT, teniendo en cuenta algunas medidas como la longitud maxima de este token y el relleno de estos para que todos sean de la misma longitud.
 
+De cara al entrenamiento del modelo primeramente configuramos los argumentos a emplear para el entrenamiento, como por ejemplo directorio donde guardaremos los resultados del modelo,el número de epochs a emplear (1), o también la frecuencia de registro de métricas.
+Por ultimo realizaremos el entrenamiento y la evaluación del modelo y nos lo guardaremos en local para su posterior uso.
+
+Una vez ya tenemos nuestro modelo entrenado y evaluado,podemos seguir los mismos pasos que en el apartado 3, para realizar la vectorizacion medainte BERT de nuestras columnas de texto. El único cambio que deberemos de realizar es cambiar el tokenizer y el modelo y sustituir el que empleabamos en el apartado 3 por nuestro nuevo modelo entrenado.
+
+Para la comparación de resultados entre los dos modelos de BERT realizaremos los mismos pasos con ambos modelos. Analizaremos los resultados del MSE, MAE, RMSE y R^2 de la  red neuronal, y los modelos de regreión KNN y Random Forest.
+Los resultados obtrenidos se pueden apreciar en la siguiente tabla:
+<div align="center">
+
+| Modelo BERT       | Modelo de Regresión |    MSE    |    MAE    |   RMSE   |     R²    |
+|:-----------------:|:-------------------:|:---------:|:---------:|:--------:|:---------:|
+| BERT-Modelo 1     | KNN                |   1.51   |   0.822   |  1.23   |   0.016    |
+|                   | Random Forest      |  1.61   |   0.83   |  1.27  |   0.044    |
+|                   | Red Neuronal       |   1.67   |   X   | X   |   -0.05    |
+| BERT-Modelo 2     | KNN                |   1.48   |   0.77   |  1.22   |   0.04    |
+|                   | Random Forest      |   1.39   |   0.79   |  1.18   |   0.09    |
+|                   | Red Neuronal       |   1.52   |   X   |  X  |  0.04    |
+
+</div>
+
+Se puede apreciar que con nuestro nuevo modelo hemos conseguido unos resultados ligeramente mejores.
 
 # EXTENSIÓN
 En la extensión se ha realizado una tarea de traducción de texto.
