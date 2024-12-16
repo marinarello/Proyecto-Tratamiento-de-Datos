@@ -68,7 +68,9 @@ A continuación, representamos los términos más frecuentes en el la columna de
 
 # 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
 ## - TF-IDF
+
 ## - Word2Vec(es decir, la representación de los documentos como promedio de los embeddings de las palabras que lo forman)
+Para la vectorizacion de las columnas de texto empleando Word2Vec
 ## - Embeddings contextuales calculados a partir de modelos basados en transformers (e.g., BERT, RoBERTa, etc).
 
 # 4. Entrenamiento y evaluación de modelos de regresión utilizando al menos las dos estrategias siguientes de aprendizaje automático:
