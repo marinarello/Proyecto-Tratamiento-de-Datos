@@ -155,7 +155,7 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
         <td>1.387</td>
         <td>0.794</td>
         <td>1.178</td>
-        <td>0.101/td>
+        <td>0.101</td>
     </tr>
     <tr>
         <td>Word2Vec</td>
@@ -184,7 +184,7 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
         <td>1.585</td>
         <td>X</td>
         <td>0.004</td>
-        <tdX</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>BERT</td>
