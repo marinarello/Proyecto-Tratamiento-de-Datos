@@ -177,7 +177,7 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
         <td>1.524</td>
         <td>X</td>
         <td>0.043</td>
-        <td>X3</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Word2Vec</td>
