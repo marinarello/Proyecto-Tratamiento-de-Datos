@@ -197,6 +197,7 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
 
 </div>
 
+Observamos que la vectorización que mejores resultados obtiene en los tres modelos de regresion es TF-IDF, y que el mejor resultado se obtiene con Random Forest.
 
 
 # 5. Comparación de lo obtenido en el paso 3 con el fine-tuning de un modelo preentrenado con Hugging Face. En este paso se pide utilizar un modelo de tipo transformer con una cabeza dedicada a la tarea de regresión.
