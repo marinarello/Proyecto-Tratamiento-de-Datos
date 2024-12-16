@@ -73,6 +73,11 @@ En primer lugar deberemos de entrenar nuestro modelo sobre la columna de texto y
 min_count=1 para incluir las palabras que aparecen al menos una vez, vector_size=100 para que cada palabra sea representada mediante un vector de 100 dimensiones y por último workers=4 donde indicamos el número de hilos a emplear para el entrenamiento del modelo.
 Finalmente añadimos a nuestro dataframe en unas columnas nuevas los vectores obtenidos mediante la vectorización de W2V.
 
+<div align="center">
+  <img src="images/w2v.jpg" alt="Gráfica 1">
+</div>
+
+
 ## - Embeddings contextuales calculados a partir de modelos basados en transformers (e.g., BERT, RoBERTa, etc).
 Por último realizaremos la vectorización de las columnas de texto de nuestro dataframe empleando un modelo preentrenado de BERT ('bert-base-uncased') para generar los embeddings, colocaremos el el modelo en modo evaluacion para desactivas su entrenamiento y evitar asi cambios en los pesos.
 En primer lugar deberemos de recorrer cada fila de las columnas de texto y colocar las etiquetas "CLS" y "SEP" al inicio y al final de cada frase que tengamos, para el correcto funcionamiento de nuestro modelo. Hay que tener en cuenta que nuestrotexto tkenizado no puede tener un tamaño superior a 512 por lo que trataremos nuestros datos para que esto no llegue a ocurrir.
