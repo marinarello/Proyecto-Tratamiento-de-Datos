@@ -67,13 +67,27 @@ A continuación, representamos los términos más frecuentes en el la columna de
 
 
 # 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
+Una vez conseguido nustras columnas de texto ya preprocesadas en el paso anterior, podremos proceder con la vectoriazion de estas columnas con distintos modelos.
 ## - TF-IDF
 
 ## - Word2Vec(es decir, la representación de los documentos como promedio de los embeddings de las palabras que lo forman)
-Para la vectorizacion de las columnas de texto empleando Word2Vec
+Para la vectorizacion de las columnas de texto empleando Word2Vec que consiste en caprturar las relaciones semánticas y sintácticas entre palabras.
+En primer lugar deberemos de entrenar nuestro modelo sobre la columna de texto ya preprocesada a vectorizar. Al entrenar el modelo hemos empleado los siguientes parametros:
+min_count=1 para incluir las palabras que aparecen al menos una vez, vector_size=100 para que cada palabra sea representada mediante un vector de 100 dimensiones y por último workers=4 donde indicamos el número de hilos a emplear para el entrenamiento del modelo.
+Finalmente añadimos a nuestro dataframe en unas columnas nuevas los vectores obtenidos mediante la vectorización de W2V.
+
 ## - Embeddings contextuales calculados a partir de modelos basados en transformers (e.g., BERT, RoBERTa, etc).
+Por último realizaremos la vectorización de las columnas de texto de nuestro dataframe empleando un modelo preentrenado de BERT ('bert-base-uncased') para generar los embeddings, colocaremos el el modelo en modo evaluacion para desactivas su entrenamiento y evitar asi cambios en los pesos.
+En primer lugar deberemos de recorrer cada fila de las columnas de texto y colocar las etiquetas "CLS" y "SEP" al inicio y al final de cada frase que tengamos, para el correcto funcionamiento de nuestro modelo. Hay que tener en cuenta que nuestrotexto tkenizado no puede tener un tamaño superior a 512 por lo que trataremos nuestros datos para que esto no llegue a ocurrir.
+Una vez tokenizado nuestro código mapearemos los tokens a índices del vocabulario de BERT.
+Para finalizar con la vectorización, crearemos los tensores para los tokens y para los segmentos que se utilizaran en BERT para identificar si los tokens pertenecen a una o dos frases diferentes.
+Finalmente añadiremos al dataframe en nuevas columnas los vectores obtenidos para cada receta.
+
 
 # 4. Entrenamiento y evaluación de modelos de regresión utilizando al menos las dos estrategias siguientes de aprendizaje automático:
+################################################################
+EXPLICAR NUESTRA X
+################################################################
 Cada modelo de regresión se ha entrenado y evaluado utilizando las tres técnicas de vectorización presentadas en el apartado anterior. Esto se ha realizado con el objetivo de comparar los resultados obtenidos y determinar cuál de las técnicas ofrece el mejor rendimiento.
 ## - Redes neuronales utilizando PyTorch para su implementación.
 Se ha implementado una red neuronal diseñada con dos capas ocultas: la primera con 50 neuronas y la segunda con 25, ambas utilizando la función de activación ReLU, y una capa de salida con una única neurona para predecir valores continuos. Se divide el conjunto de datos en entrenamiento (80%) y prueba (20%), convirtiendo los datos a tensores para su uso en PyTorch. La red se entrena durante 25 épocas usando el optimizador Adam y la función de pérdida de error cuadrático medio (MSELoss), procesando los datos en lotes de 32 muestras con un DataLoader para mejorar la eficiencia. Finalmente, se evalúa el modelo en los datos de prueba calculando la pérdida y el coeficiente R2.
