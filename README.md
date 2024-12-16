@@ -233,14 +233,19 @@ Los resultados obtrenidos se pueden apreciar en la siguiente tabla:
 
 Se puede apreciar que con nuestro nuevo modelo hemos conseguido unos resultados ligeramente mejores.
 
-# EXTENSIÓN
-En la extensión se ha realizado una tarea de traducción de texto.
+# EXTENSIÓN 1
+Como primera extensión se ha realizado una tarea de traducción de texto.
 Se ha utilizado la librería Hugging Face Transformers para traducir automáticamente los títulos de la columna title del inglés al español, empleando el modelo pre-entrenado Helsinki-NLP/opus-mt-en-es. Primero, se configura un pipeline para realizar la tarea de generación de texto orientada a la traducción. Luego, se recorre cada título en la columna y se pasa al modelo un comando explícito para traducir, como "translate from English to Spanish: {title}". El modelo genera el texto traducido, que se extrae y almacena en una lista. Finalmente, esta lista de traducciones se agrega como una nueva columna, title_translated, en el DataFrame original, permitiendo tener tanto los títulos originales como sus traducciones.
 
 En la imagen de abajo se muestra el resultado de una ejecución realizada para mostrar las columnas "Title" y "Title_translated", para comprobar el correcto funcionamiento:
 <div align="center">
   <img src="images/traduccion.png" alt="Gráfica 1">
 </div>
+
+# EXTENSIÓN 2
+En la segunda extensión se ha realizado una tarea de generación de texto, generando títulos a partir de ingredientes de recetas. Se ha utilizado la librería Hugging Face Transformers para ajustar el modelo pre-entrenado GPT-2 a esta tarea. Inicialmente, se han preparado los datos creando dos columnas en el DataFrame: texto_entrada, que contiene los ingredientes formateados como "Ingredientes: {ingredients}", y texto_salida, que incluye los títulos formateados como "Título: {title}". Estas columnas se combinan y se guardan en un archivo de texto plano, que sirve como entrada para el entrenamiento. Posteriormente, se ha cargado el modelo GPT-2 junto con su tokenizador. Utilizando la clase Trainer de Hugging Face, se ha ajustado el modelo en función del archivo de texto preparado. Una vez entrenado, el modelo se guarda y se utiliza para generar nuevos títulos a partir de una lista de ingredientes. Para ello, se define una función donde se pasa un prompt en formato "Ingredientes: {ingredientes}\nTítulo:", y el modelo genera el texto correspondiente.
+
+Se ha preparado el código para la realización de esta extensión, sin poder llegar a comprobar su funcionamiento debido a problemas de exceder el "running time" en la ejecución.
 
 # RECUSROS UTILIZADOS
 
