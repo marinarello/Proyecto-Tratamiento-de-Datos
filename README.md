@@ -60,18 +60,18 @@ Para ello se han realizado los siguientes pasos:
   - Cleaning: se han eliminado aquellas palabras que son muy comunes en el idioma y no aportan contenido semántico útil 
   - Vectorization: Se ha transformado el texto procesado en una representación numérica (vectores) que los algoritmos pueden interpretar. Estos vectores capturan la información semántica y estructural del texto. Para ello, se ha creado un diccionario que asocia cada token con un identificador único y se han eliminado palabras que aparecen en muy pocos documentos o en demasiados. Cada documento se convierte en una lista de tuplas incluyendo el identificador único del token y la cantidad de veces que ese token aparece en el documento. Esto produce una representación dispersa (sparse vector), donde las palabras relevantes del texto están asociadas con su frecuencia. Finalmente, cada documento se representa como un vector disperso, donde los identificadores de los tokens corresponden a posiciones específicas del vector, y los valores representan la frecuencia.
 
-Por último vamos a crear un diccionario para cada una de las columnas ya preprocesadas, y una vez creado realizaremos una limpieza para eliminar las palabras del diccionario que aparezcan en mas del 80% de recetas y en menos de 5 documentos.Terminaremos realizando un Bag of Words (BoW) para las columnas preprocesadas del dataframe, de esta manera habremos realizado una vectorización simple de nustro texto.
+Por último vamos a crear un diccionario para cada una de las columnas ya preprocesadas, y una vez creado realizaremos una limpieza para eliminar las palabras del diccionario que aparezcan en más del 80% de recetas y en menos de 5 documentos.Terminaremos realizando un Bag of Words (BoW) para las columnas preprocesadas del dataframe, de esta manera habremos realizado una vectorización simple de nustro texto.
 
 # 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
-Una vez conseguido nustras columnas de texto ya preprocesadas en el paso anterior, podremos proceder con la vectoriazion de estas columnas con distintos modelos.
+Una vez conseguido nustras columnas de texto ya preprocesadas en el paso anterior, podremos proceder con la vectoriazión de estas columnas con distintos modelos.
 ## - TF-IDF
-Comenzaremos con la vectorización mediante TF-IDF. Para ello empleamos el modelo TfidfVectorizer el caul aprende el vocabulario y su importancia mediante un fit, y a continuación realiza una transformacion de los textos en vectores mediante un transform. Obtedremos una matriz en la que veremos la representacion de cada palabra de una receta con su puntuaje de TF-IDF.
+Comenzaremos con la vectorización mediante TF-IDF. Para ello empleamos el modelo TfidfVectorizer el cual aprende el vocabulario y su importancia mediante un fit, y a continuación realiza una transformación de los textos en vectores mediante un transform. Obtedremos una matriz en la que veremos la representación de cada palabra de una receta con su puntuaje de TF-IDF.
 Realizamos estos pasos con cada una de las columnas de texto que tenemos.
 
 ## - Word2Vec(es decir, la representación de los documentos como promedio de los embeddings de las palabras que lo forman)
-Para la vectorizacion de las columnas de texto empleando Word2Vec que consiste en caprturar las relaciones semánticas y sintácticas entre palabras.
-En primer lugar deberemos de entrenar nuestro modelo sobre la columna de texto ya preprocesada a vectorizar. Al entrenar el modelo hemos empleado los siguientes parametros:
-min_count=1 para incluir las palabras que aparecen al menos una vez, vector_size=100 para que cada palabra sea representada mediante un vector de 100 dimensiones y por último workers=4 donde indicamos el número de hilos a emplear para el entrenamiento del modelo.
+Para la vectorización de las columnas de texto empleando Word2Vec que consiste en caprturar las relaciones semánticas y sintácticas entre palabras.
+En primer lugar deberemos de entrenar nuestro modelo sobre la columna de texto ya preprocesada a vectorizar. Al entrenar el modelo hemos empleado los siguientes parámetros:
+min_count=1 para incluir las palabras que aparecen al menos una vez, vector_size=100 para que cada palabra sea representada mediante un vector de 100 dimensiones, y por último workers=4 donde indicamos el número de hilos a emplear para el entrenamiento del modelo.
 Finalmente añadimos a nuestro dataframe en unas columnas nuevas los vectores obtenidos mediante la vectorización de W2V.
 
 <div align="center">
@@ -80,10 +80,10 @@ Finalmente añadimos a nuestro dataframe en unas columnas nuevas los vectores ob
 
 
 ## - Embeddings contextuales calculados a partir de modelos basados en transformers (e.g., BERT, RoBERTa, etc).
-Por último realizaremos la vectorización de las columnas de texto de nuestro dataframe empleando un modelo preentrenado de BERT ('bert-base-uncased') para generar los embeddings, colocaremos el el modelo en modo evaluacion para desactivas su entrenamiento y evitar asi cambios en los pesos.
-En primer lugar deberemos de recorrer cada fila de las columnas de texto y colocar las etiquetas "CLS" y "SEP" al inicio y al final de cada frase que tengamos, para el correcto funcionamiento de nuestro modelo. Hay que tener en cuenta que nuestrotexto tkenizado no puede tener un tamaño superior a 512 por lo que trataremos nuestros datos para que esto no llegue a ocurrir.
+Por último realizaremos la vectorización de las columnas de texto de nuestro dataframe empleando un modelo preentrenado de BERT ('bert-base-uncased') para generar los embeddings, colocaremos el modelo en modo evaluación para desactivar su entrenamiento y evitar asi cambios en los pesos.
+En primer lugar deberemos de recorrer cada fila de las columnas de texto y colocar las etiquetas "CLS" y "SEP" al inicio y al final de cada frase que tengamos, para el correcto funcionamiento de nuestro modelo. Hay que tener en cuenta que nuestro texto tokenizado no puede tener un tamaño superior a 512 por lo que trataremos nuestros datos para que esto no llegue a ocurrir.
 Una vez tokenizado nuestro código mapearemos los tokens a índices del vocabulario de BERT.
-Para finalizar con la vectorización, crearemos los tensores para los tokens y para los segmentos que se utilizaran en BERT para identificar si los tokens pertenecen a una o dos frases diferentes.
+Para finalizar con la vectorización, crearemos los tensores para los tokens y para los segmentos que se utilizarán en BERT para identificar si los tokens pertenecen a una o dos frases diferentes.
 Finalmente añadiremos al dataframe en nuevas columnas los vectores obtenidos para cada receta.
 
 
@@ -214,9 +214,9 @@ Al igual que en el punto 3 empleamos el modelo y el tokenizador de 'bert-base-un
 De cara al entrenamiento del modelo primeramente configuramos los argumentos a emplear para el entrenamiento, como por ejemplo directorio donde guardaremos los resultados del modelo,el número de epochs a emplear (1), o también la frecuencia de registro de métricas.
 Por ultimo realizaremos el entrenamiento y la evaluación del modelo y nos lo guardaremos en local para su posterior uso.
 
-Una vez ya tenemos nuestro modelo entrenado y evaluado,podemos seguir los mismos pasos que en el apartado 3, para realizar la vectorizacion medainte BERT de nuestras columnas de texto. El único cambio que deberemos de realizar es cambiar el tokenizer y el modelo y sustituir el que empleabamos en el apartado 3 por nuestro nuevo modelo entrenado.
+Una vez ya tenemos nuestro modelo entrenado y evaluado,podemos seguir los mismos pasos que en el apartado 3, para realizar la vectorización medainte BERT de nuestras columnas de texto. El único cambio que deberemos de realizar es cambiar el tokenizer y el modelo y sustituir el que empleabamos en el apartado 3 por nuestro nuevo modelo entrenado.
 
-Para la comparación de resultados entre los dos modelos de BERT realizaremos los mismos pasos con ambos modelos. Analizaremos los resultados del MSE, MAE, RMSE y R^2 de la  red neuronal, y los modelos de regreión KNN y Random Forest.
+Para la comparación de resultados entre los dos modelos de BERT realizaremos los mismos pasos con ambos modelos. Analizaremos los resultados del MSE, MAE, RMSE y R^2 de la  red neuronal, y los modelos de regresión KNN y Random Forest.
 Los resultados obtrenidos se pueden apreciar en la siguiente tabla:
 <div align="center">
 
