@@ -242,6 +242,15 @@ En la imagen de abajo se muestra el resultado de una ejecución realizada para m
   <img src="images/traduccion.png" alt="Gráfica 1">
 </div>
 
+# RECUSROS UTILIZADOS
+
+[1] https://www.youtube.com/watch?v=ATK6fm3cYfI
+[2]https://github.com/ML4DS/ML4all/blob/master/B5_NLP/TM1.IntrodNLP/NLP_py3_NSF/notebook/NLPintro_professor.ipynb 
+[3] [https://www.youtube.com/watch?v=scnxktbxYv8](https://www.youtube.com/watch?v=ZjaMvO3VEdU&t=360s)
+[4]https://github.com/marvin2311/NN_Projects/blob/main/house_prices_ANN.ipynb 
+[5]https://github.com/ML4DS/ML4all/blob/master/B2_regression/R2.kNN_Regression/regression_knn_professor.ipynb 
+[6] 
+
 
 
 
