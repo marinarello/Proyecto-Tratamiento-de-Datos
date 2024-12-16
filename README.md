@@ -204,6 +204,11 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
 En la extensión se ha realizado una tarea de traducción de texto.
 Se ha utilizado la librería Hugging Face Transformers para traducir automáticamente los títulos de la columna title del inglés al español, empleando el modelo pre-entrenado Helsinki-NLP/opus-mt-en-es. Primero, se configura un pipeline para realizar la tarea de generación de texto orientada a la traducción. Luego, se recorre cada título en la columna y se pasa al modelo un comando explícito para traducir, como "translate from English to Spanish: {title}". El modelo genera el texto traducido, que se extrae y almacena en una lista. Finalmente, esta lista de traducciones se agrega como una nueva columna, title_translated, en el DataFrame original, permitiendo tener tanto los títulos originales como sus traducciones.
 
+En la imagen de abajo se muestra el resultado de una ejecución realizada para mostrar las columnas "Title" y "Title_translated", para comprobar el correcto funcionamiento:
+<div align="center">
+  <img src="images/Dataset_completo.png" alt="Gráfica 1">
+</div>
+
 
 
 
