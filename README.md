@@ -96,68 +96,68 @@ A continuación, se presenta una tabla comparativa que recoge los resultados obt
     <tr>
         <td rowspan="3">k-NN</td>
         <td>TF-IDF</td>
-        <td>0.34</td>
-        <td>0.21</td>
-        <td>0.89</td>
-        <td>0.58</td>
+        <td>1.436</td>
+        <td>0.807</td>
+        <td>1.198</td>
+        <td>0.069</td>
     </tr>
     <tr>
         <td>Word2Vec</td>
-        <td>0.38</td>
-        <td>0.25</td>
-        <td>0.85</td>
-        <td>0.62</td>
+        <td>1.518</td>
+        <td>0.822</td>
+        <td>1.232</td>
+        <td>0.016</td>
     </tr>
     <tr>
         <td>BERT</td>
-        <td>0.40</td>
-        <td>0.28</td>
-        <td>0.83</td>
-        <td>0.63</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
     </tr>
     <tr>
         <td rowspan="3">Random Forest</td>
         <td>TF-IDF</td>
-        <td>0.30</td>
-        <td>0.18</td>
-        <td>0.91</td>
-        <td>0.54</td>
+        <td>1.387</td>
+        <td>0.794</td>
+        <td>1.178</td>
+        <td>0.101/td>
     </tr>
     <tr>
         <td>Word2Vec</td>
-        <td>0.32</td>
-        <td>0.20</td>
-        <td>0.90</td>
-        <td>0.56</td>
+        <td>1.413</td>
+        <td>0.801</td>
+        <td>1.189</td>
+        <td>0.084</td>
     </tr>
     <tr>
         <td>BERT</td>
-        <td>0.35</td>
-        <td>0.22</td>
-        <td>0.87</td>
-        <td>0.59</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
     </tr>
     <tr>
         <td rowspan="3">Red Neuronal</td>
         <td>TF-IDF</td>
-        <td>0.28</td>
-        <td>0.17</td>
-        <td>0.92</td>
-        <td>0.53</td>
+        <td>1.524</td>
+        <td>X</td>
+        <td>0.043</td>
+        <td>X3</td>
     </tr>
     <tr>
         <td>Word2Vec</td>
-        <td>0.31</td>
-        <td>0.19</td>
-        <td>0.91</td>
-        <td>0.55</td>
+        <td>1.585</td>
+        <td>X</td>
+        <td>0.004</td>
+        <tdX</td>
     </tr>
     <tr>
         <td>BERT</td>
-        <td>0.33</td>
-        <td>0.21</td>
-        <td>0.89</td>
-        <td>0.57</td>
+        <td>?</td>
+        <td>X</td>
+        <td>?</td>
+        <td>X</td>
     </tr>
 </table>
 
