@@ -72,8 +72,14 @@ A continuación, representamos los términos más frecuentes en el la columna de
 ## - Embeddings contextuales calculados a partir de modelos basados en transformers (e.g., BERT, RoBERTa, etc).
 
 # 4. Entrenamiento y evaluación de modelos de regresión utilizando al menos las dos estrategias siguientes de aprendizaje automático:
+Cada modelo de regresión se ha entrenado y evaluado utilizando las tres técnicas de vectorización presentadas en el apartado anterior. Esto se ha realizado con el objetivo de comparar los resultados obtenidos y determinar cuál de las técnicas ofrece el mejor rendimiento.
 ## - Redes neuronales utilizando PyTorch para su implementación.
+Se ha implementado una red neuronal diseñada con dos capas ocultas: la primera con 50 neuronas y la segunda con 25, ambas utilizando la función de activación ReLU, y una capa de salida con una única neurona para predecir valores continuos. Se divide el conjunto de datos en entrenamiento (80%) y prueba (20%), convirtiendo los datos a tensores para su uso en PyTorch. La red se entrena durante 25 épocas usando el optimizador Adam y la función de pérdida de error cuadrático medio (MSELoss), procesando los datos en lotes de 32 muestras con un DataLoader para mejorar la eficiencia. Finalmente, se evalúa el modelo en los datos de prueba calculando la pérdida y el coeficiente R2.
+
 ## - Al menos otra técnica implementada en la librería Scikit-learn (e.g., K-NN, SVM, Random Forest, etc)
+Se han implementado los modelos de regresión k-NN y Random Forest. 
+Para el modelo k-NN, se ha realizado validación cruzada en cada vectorización con el objetivo de determinar el valor óptimo del hiperparámetro 𝑘. 
+En el caso de Random Forest, debido a las limitaciones de tiempo y al elevado costo computacional, el ajuste de los hiperparámetros "n_estimators" y "max_depth" se ha realizado únicamente para una de las vectorizaciones, utilizando los valores obtenidos como referencia para el resto de los modelos.
 
 # 5. Comparación de lo obtenido en el paso 3 con el fine-tuning de un modelo preentrenado con Hugging Face. En este paso se pide utilizar un modelo de tipo transformer con una cabeza dedicada a la tarea de regresión.
 
